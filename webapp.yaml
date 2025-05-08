@@ -16,10 +16,10 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: nanajanashia/k8s-demo-app:v1.0    // This is the image that will be used for the deployment
+        image: nanajanashia/k8s-demo-app:v1.0    #This is the image that will be used for the deployment
         ports:
-        - containerPort: 3000  // This is the port that the application will listen on
-        env:
+        - containerPort: 3000   #This is the port that the application will listen on
+        env:                  # Environment variables for the application  
         - name: USER_NAME
           valueFrom:
             secretKeyRef:
@@ -41,12 +41,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: webapp-service    // This is the service name that will be used in the application
+  name: webapp-service    # This is the service name that will be used in the application
 spec:
   selector:      
-    app: webapp           // This should match the label in the deployment
+    app: webapp           # This should match the label in the deployment
   ports:
     - protocol: TCP
-      port: 3000        // This is the port that will be exposed
-      targetPort: 3000    // This should match the container port in the deployment
+      port: 3000        # This is the port that will be exposed
+      targetPort: 3000    # This should match the container port in the deployment
 

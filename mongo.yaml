@@ -35,12 +35,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongo-service    // This is the service name that will be used in the application
+  name: mongo-service    # This is the service name that will be used in the application
 spec:
   selector:      
-    app: mongo           // This should match the label in the deployment
+    app: mongo           # This should match the label in the deployment
   ports:
     - protocol: TCP
-      port: 27017        // This is the port that will be exposed
-      targetPort: 27017    // This should match the container port in the deployment
+      port: 27017        # This is the port that will be exposed
+      targetPort: 27017    # This should match the container port in the deployment
 
